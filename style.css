@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+}
+
+.box {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 8rem;
+    margin: 0 auto;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 450px;
+    background-color: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    transform: rotate(20deg);
+    background: linear-gradient(45deg, #b38b43, #acedf0);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    transform: rotate(-20deg);
+    background: linear-gradient(45deg, #b38b43, #acedf0);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.card:hover::before {
+    transform: rotate(-20deg);
+}
+
+.card:hover::after {
+    transform: rotate(20deg);
+}
+
+.card .imgb {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 120px;
+    right: 10px;
+    background-color: #111;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.card .imgb img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover .imgb {
+    bottom: 100px;
+}
+
+.card .detail {
+    position: absolute;
+    padding: 5px 0;
+    left: 10px;
+    right: 10px;
+    bottom: 30px;
+    height: 70px;
+    text-align: center;
+}
+
+.card .detail h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 20px;
+    color: #777;
+    text-transform: capitalize;
+}
+
+.card .detail p {
+    font-size: 15px;
+    color: #b38b43;
+    transition: .5s ease-in-out;
+}
+
+.card .detail .social i {
+    padding: 10px;
+    font-size: 25px;
+    transition: .5s ease;
+}
+
+.card .detail .social i:hover {
+    transform: rotate(360deg);
+}
+
+.fa-facebook {
+    color: #316ff6;
+}
+
+.fa-twitter {
+    color: #1da1f2;
+}
+
+.fa-instagram {
+    color: #d62976;
+}
+
+.fa-envelope {
+    color: #c71610;
+}
